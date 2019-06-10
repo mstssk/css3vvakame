@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" /><title>わかめねこをCSS3を使って描いてみた - js do it</title>
+<meta name="Description" content="jsdo.it - share JavaScript, HTML5 and CSS - " />
+<meta name="Keywords"  content="JavaScript,HTML5,CSS" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+<style type="text/css">body { 
+    background-color: white;
+}
+
+.ear {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: -moz-radial-gradient(40% 40%, ellipse cover, #FFF568 15%, #FCCC48 65%);
+    background: -webkit-radial-gradient(40% 40%, ellipse cover, #FFF568 15%, #FCCC48 65%);
+    border: solid 12px black;
+    border-radius: 15% 82% 1% 95% / 15% 75% 1% 83%;
+}
+.ear.left{
+    top: 33px;
+    left: 9px;
+    -webkit-transform: rotate(28deg);
+    -moz-transform: rotate(28deg);
+}
+.ear.right{
+    top: 35px;
+    left: 102px;
+    -webkit-transform: rotate(83deg);
+    -moz-transform: rotate(83deg);
+}
+
+.eye {
+    position: absolute;
+    width: 12px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: black;
+}
+.eye.left {
+    top: 104px;
+    left: 93px;
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+}
+.eye.right {
+    top: 107px;
+    left: 186px;
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+}
+
+.pattern {
+    position: absolute;
+    width: 16px;
+    background: #f79521;
+    border-radius: 25%;
+}
+.pattern:before {
+	content: "";
+    top: 0px;
+    left: -25px;
+    position: absolute;
+    width: 16px;
+    height: 40px;
+    background: #f79521;
+    border-radius: 25%;
+}
+.pattern:after {
+	content: "";
+    top: 0px;
+    left: 26px;
+    position: absolute;
+    width: 16px;
+    height: 40px;
+    background: #f79521;
+    border-radius: 25%;
+}
+
+.pattern.top,
+.pattern.top:before,
+.pattern.top:after {
+	height: 40px;
+}
+.pattern.left,
+.pattern.left:before,
+.pattern.left:after,
+.pattern.right,
+.pattern.right:before,
+.pattern.right:after {
+	height: 30px;
+}
+
+.pattern.top {
+    top: -3px;
+    left: 91px;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+}
+.pattern.left {
+    top: 82px;
+    left: 5px;
+    -webkit-transform: rotate(86deg);
+    -moz-transform: rotate(86deg);
+}
+.pattern.right {
+    top: 68px;
+    left: 184px;
+    -webkit-transform: rotate(87deg);
+    -moz-transform: rotate(87deg);
+}
+        
+.head {
+    position: absolute;
+    top: 56px;
+    left: 27px;
+    width: 207px;
+    height: 170px;
+    background-color: #fff568;
+    border: solid 12px;
+    border-color: transparent;
+    border-radius: 100%;
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+}
+.head:after {
+    content: "";
+    top: -12px;
+    left: -12px;
+    position: absolute;
+    width: 207px;
+    height: 170px;
+    border: solid 12px;
+    border-color: black black transparent black;
+    border-radius: 100%;
+}
+.body {
+    position: absolute;
+    top: 228px;
+    left: 94px;
+    width: 80px;
+    height: 135px;
+    background: -moz-linear-gradient(top, #fff568, #fccc48);
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff568), to(#fccc48));
+    border: solid 12px black;
+    border-color: transparent black black black;
+    border-radius: 70% 70% 85% 85% / 100% 100% 45% 45%;
+}
+
+.nose {
+    position: absolute;
+    top: 161px;
+    left: 140px;
+    width: 7px;
+    height: 10px;
+    border-radius: 20px;
+    background-color: black;
+}
+.nose::before {
+    content: "";
+    position: absolute;
+    top: -11px;
+    left: -29px;
+    width: 23px;
+    height: 25px;
+    border: solid 6px;
+    border-color: transparent black black black;
+    border-radius: 100px;
+    -webkit-transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+}
+.nose:after {
+    content: "";
+    position: absolute;
+    top: -11px;
+    left: 1px;
+    width: 23px;
+    height: 25px;
+    border: solid 6px;
+    border-color: transparent black black black;
+    border-radius: 100px;
+    -webkit-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+}
+
+.arm {
+    position: absolute;
+    width: 27px;
+	height: 90px;
+    background: -moz-linear-gradient(top, #f7941e, #fff568);
+    background: -webkit-gradient(linear, left top, left bottom, from(#f7941e), to(#fff568));
+    border: solid 12px black;
+    border-radius: 40% 40% 60% 60% / 40% 40% 80% 80%;
+}
+.arm.left {
+	top: 170px;
+	left: 44px;
+    -webkit-transform: rotate(-70deg);
+    -moz-transform: rotate(-70deg);
+}
+.arm.right {
+	top: 172px;
+	left: 197px;
+    -webkit-transform: rotate(70deg);
+    -moz-transform: rotate(70deg);
+}
+
+.leg {
+    position: absolute;
+    width: 23px;
+	height: 80px;
+        background: -moz-linear-gradient(top, #fff568, #f7941e);
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff568), to(#f7941e));
+    border: solid 12px black;
+    border-radius:  60% 60% 40% 40% / 80% 80% 40% 40%;
+}
+.leg.left {
+    top: 361px;
+    left: 97px;
+}
+.leg.right {
+    top: 361px;
+	left: 151px;
+}
+
+.tail {
+    top: 227px;
+    left: 165px;
+    position: absolute;
+    width: 80px;
+    height: 90px;
+    background: #fff568;
+    border: solid 12px black;
+    border-color: transparent black black transparent;
+    border-radius: 50% 18% 80% 20% / 80% 36% 70% 44%;
+    -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+}
+.tail:before {
+	content: "";
+    top: -30px;
+    left: -13px;
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background: white;
+    border: solid 12px black;
+    border-color: transparent black black transparent;
+    border-radius: 50% 18% 60% 40% / 80% 36% 56% 44%;
+	-webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+}
+.tail:after {
+    content: "";
+    top: -70px;
+    left: 70px;
+    position: absolute;
+    width: 50px;
+    height: 15px;
+    background: #FFF568;
+    border: solid 12px black;
+    border-radius: 70% 50% 50% 50% / 50% 50% 50% 50%;
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+}
+</style></head>
+<body>
+<div class="ear left"></div>
+<div class="ear right"></div>
+<div class="tail"></div>
+<div class="leg left"></div>
+<div class="leg right"></div>
+<div class="body"></div>
+<div class="head">
+    <div class="pattern top"></div>
+    <div class="pattern left"></div>
+    <div class="pattern right"></div>
+</div>
+<div class="eye left"></div>
+<div class="eye right"></div>
+<div class="nose"></div>
+<div class="arm left"></div>
+<div class="arm right"></div>
+
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
